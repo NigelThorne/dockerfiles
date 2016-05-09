@@ -6,14 +6,16 @@ RUN mkdir -p /var/run/sshd
 RUN git config --global user.email "robot@example.com"
 RUN git config --global user.name "Robot"
 
-ADD https://raw.github.com/progrium/gitreceive/master/gitreceive /usr/local/bin/
-ADD receiver /home/git/receiver
-
-RUN chmod 755 /home/git/receiver usr/local/bin/gitreceive 
-RUN /usr/local/bin/gitreceive init
-
 ADD sshkey.pub /root/.ssh/authorized_keys
 RUN chown root:root /root/.ssh/authorized_keys
+
+
+ADD https://raw.github.com/progrium/gitreceive/master/gitreceive /usr/local/bin/
+RUN chmod 755 usr/local/bin/gitreceive 
+RUN /usr/local/bin/gitreceive init
+
+ADD receiver /home/git/receiver
+RUN chmod 755 /home/git/receiver
 
 VOLUME /home/git
 EXPOSE 22
