@@ -1,4 +1,5 @@
-FROM ubuntu:precise
+FROM ruby:2.1.5
+ENV LANG C.UTF-8
 
 RUN apt-get -y update && apt-get -y install git ssh
 RUN mkdir -p /var/run/sshd

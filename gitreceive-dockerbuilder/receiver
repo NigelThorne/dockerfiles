@@ -1,8 +1,8 @@
-#!/bin/bash
-set -e
-set -x
-echo "Receiving a push.."
-echo "==> repository: $1"
-echo "==> revision: $2"
-echo "==> username: $3"
-echo "==> fingerprint: $4"
+#!/bin/ruby
+puts "Receiving a push.."
+puts "==> repository: $1 - #{ARGV[0]}"
+puts "==> revision: $2 - #{ARGV[1]}"
+puts "==> username: $3 - #{ARGV[2]}"
+puts "==> fingerprint: $4 - #{ARGV[3]}"
+
+
