@@ -16,3 +16,4 @@ The container will expose port 22 (default ssh port) and have a docker volume mo
 A simple receiver script added so it will print out repo details when you push.
 
 *The ssh keys are provided for convenience. You must create your own in any serious use.*
+wget https://raw.github.com/progrium/gitreceive/master/gitreceive

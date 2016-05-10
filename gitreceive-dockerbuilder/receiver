@@ -1,5 +1,5 @@
 #!/bin/ruby
-puts "Receiving a push.."
+puts "Ruby sReceiving a push.."
 puts "==> repository: $1 - #{ARGV[0]}"
 puts "==> revision: $2 - #{ARGV[1]}"
 puts "==> username: $3 - #{ARGV[2]}"

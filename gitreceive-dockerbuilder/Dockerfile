@@ -11,7 +11,8 @@ ADD sshkey.pub /root/.ssh/authorized_keys
 RUN chown root:root /root/.ssh/authorized_keys
 
 
-ADD https://raw.github.com/progrium/gitreceive/master/gitreceive /usr/local/bin/
+#ADD https://raw.github.com/progrium/gitreceive/master/gitreceive /usr/local/bin/
+ADD gitreceive /usr/local/bin/
 RUN chmod 755 usr/local/bin/gitreceive 
 RUN /usr/local/bin/gitreceive init
 
