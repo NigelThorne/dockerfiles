@@ -18,11 +18,12 @@ A simple receiver script added so it will print out repo details when you push.
 *The ssh keys are provided for convenience. You must create your own in any serious use.*
 wget https://raw.github.com/progrium/gitreceive/master/gitreceive
 
-#Starts docker server
-docker run --privileged --name some-docker -d docker:1.11-dind
-
 #Run registry
 docker run -d -p 5000:5000 --restart=always --name registry registry:2
+
+#Starts docker server
+docker run --privileged --name some-docker --link registry:registry -d docker:1.11-dind
+
 
 #Run this server
 docker run --link some-docker:docker --link registry:registry -p 34567:22 -d --name gitreceive 

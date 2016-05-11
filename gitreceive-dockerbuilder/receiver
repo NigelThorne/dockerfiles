@@ -7,14 +7,15 @@ export DOCKER_HOST='tcp://docker:2375'
 mkdir -p ~/projects/$1 && cat | tar -x -C ~/projects/$1
 pushd ~/projects/$1
 
-docker build -t $1 .
+docker build -t $1:latest .
 
-docker tag $1:latest localhost:5000/$1
-docker push loclahost:5000/$1
+docker tag $1:latest registry:5000/$1
+
+docker push registry:5000/$1:latest
 
 ### docker tag [OPTIONS] IMAGE[:TAG] [REGISTRYHOST/][USERNAME/]NAME[:TAG]
 # docker tag myImage myRegistry.com/myImage
-### docker push NAME[:TAG]
+### docker push [REGISTRYHOST/][USERNAME/]NAME[:TAG]
 # docker push myRegistry.com/myImage
 
 
