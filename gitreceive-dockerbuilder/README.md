@@ -51,10 +51,10 @@ Here is what I do:
 At the moment you can push a repo (to remote: git@192.168.99.100:xxx) with a valid `Dockerfile`, and it will use the 'docker in docker' image to build the project and publish the resulting image to the linked registry.
 
 #TODO:
-* On receiving a repo with compose.yml files, deploy the comfiguration to the linked docker server.
+* On receiving a repo with compose.yml files, deploy the configuration to the linked docker server.
 * handle errors
 * handle 'upgrading a service'
 * handle 'multiple users pushing forks of an image'
 * handle 'environments' -- maybe just run two parallel stacks.
-
+* Add a docker-compose.yml for this configuation so you can spin up all 3 services at once.
 
